@@ -1,0 +1,22 @@
+extends ./layout/index.pug
+block compartircontenido
+    main.bg-degradado
+        .container.mt-5.text-dark
+            h1.text-center.mt-5 #{pagina}
+            .row.py-5
+                if hoteles
+                    each hotel in hoteles
+                            .col-md.col-lg-4.nv-4
+                                .card
+                                    h5.card-header= `Hotel #${hotel.id_htl}`
+                                    .card-body
+                                        h5.card-title=`${hotel.nombre}`
+                                        p.card-text=`Teléfono:: ${hotel.telefono}`
+                                        p.card-text=`Dirección: ${hotel.direccion}`
+                                        p.card-text=`Correo: ${hotel.correo}`
+                                        p.card-text=`Gerente: ${hotel.gerente.nombre} ${hotel.gerente.ap_paterno} ${hotel.gerente.ap_materno}`
+                                        a.btn.btn-primary.mr-2(href=`/modificarHoteles?id=${hotel.id_htl}`) Modificar  
+                                        |
+                                        a.btn.btn-danger(href=`/eliminarHoteles?id=${hotel.id_htl}`) Eliminar
+            .mb-4.d-grid
+        

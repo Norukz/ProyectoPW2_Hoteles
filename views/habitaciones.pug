@@ -1,0 +1,22 @@
+extends ./layout/index.pug
+block compartircontenido
+    main.bg-degradado
+        .container.mt-5.text-dark
+            h1.text-center.mt-5 #{pagina}
+            .row.py-5
+                if habitaciones
+                    each habitacion in habitaciones
+                            .col-md.col-lg-4.nv-4
+                                .card
+                                    h5.card-header= `Habitación #${habitacion.id_hbt}`
+                                    .card-body
+                                        h5.card-title=`${habitacion.hotele.nombre}`
+                                        p.card-text=`Habitación: ${habitacion.nombre}`
+                                        p.card-text=`Piso: ${habitacion.piso}`
+                                        p.card-text=`Nombre: ${habitacion.nombre}`
+                                        p.card-text= (`${habitacion.refrigerador}` == '1') ? `Refrigerador: Disponible` : `Refrigerador: No Disponible` 
+                                        a.btn.btn-primary.mr-2(href=`/modificarHabitacion?id=${habitacion.id_hbt}`) Modificar  
+                                        |
+                                        a.btn.btn-danger(href=`/eliminarHabitaciones?id=${habitacion.id_hbt}`) Eliminar  
+            .mb-4.d-grid
+                                            
