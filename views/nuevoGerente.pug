@@ -10,7 +10,7 @@ block compartircontenido
 
             .row.justify-content-center.col 
                 .col-md-8|
-                    form(action = "/nuevoGerente", method="POST")
+                    form(action= "/nuevoGerente", method="POST")
                         .mb-4 
                             input(type="hidden" id="id_grt" name="id_grt" value=id_grt)
                         .mb-4 
@@ -18,10 +18,10 @@ block compartircontenido
                             input.form-control(type="text",value=nombre, name="nombre",placeholder="Nombre del Gerente...", required)
                         .mb-4 
                             label.form-label(for="apellidoPaterno") Apellido Paterno
-                            input.form-control(type="text",value=ap_paterno , name="nombre",placeholder="Apellido Paterno...", required)
+                            input.form-control(type="text",value=ap_paterno , name="ap_paterno",placeholder="Apellido Paterno...", required)
                         .mb-4 
                             label.form-label(for="apellidoMaterno") Apellido Materno
-                            input.form-control(type="text",value=ap_materno , name="nombre",placeholder="apellido Materno...", required)    
+                            input.form-control(type="text",value=ap_materno , name="ap_materno",placeholder="apellido Materno...", required)    
                         .mb-4
                             label.form-label(for="telefono") Teléfono
                             input.form-control(type="tel", value=telefono,name="telefono",placeholder="Teléfono..." , maxlength="12",onkeypress="return (event.charCode >= 48 && event.charCode <= 57)", required)
